@@ -4,7 +4,9 @@ import { Response } from 'express';
 
 @Controller('operaciones') // localhost:3000/operaciones
 export class OperacionesController {
-  constructor(private readonly operService: OperacionesService) {}
+  constructor(
+    private readonly operService: OperacionesService
+  ) {}
 
   @Get() // localhost:3000/operaciones?operacion=suma&a=10&b=40
   operar(

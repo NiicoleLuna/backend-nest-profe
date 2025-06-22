@@ -51,4 +51,116 @@ describe('AppController (e2e)', () => {
       .query({ operacion: 'suma', a: "a", b: 100 })
       .expect(502);
   });
+
+  /* resta */
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'resta', a: 50, b: 25 })
+      .expect(200)
+      .then((response) => {
+        expect(response.body.resultado).toBe(25);
+      });
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'resta', a: "a", b: 100 })
+      .expect(502);
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'resta', a: undefined, b: 100 })
+      .expect(502);
+  });
+
+  /* multiplicacion */
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'multiplicacion', a: 8, b: 3 })
+      .expect(200)
+      .then((response) => {
+        expect(response.body.resultado).toBe(24);
+      });
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'multiplicacion', a: "a", b: 100 })
+      .expect(502);
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'multiplicacion', a: undefined, b: 100 })
+      .expect(502);
+  });
+
+  /* division */
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'division', a: 9, b: 3 })
+      .expect(200)
+      .then((response) => {
+        expect(response.body.resultado).toBe(3);
+      });
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'division', a: "a", b: 100 })
+      .expect(502);
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'division', a: undefined, b: 100 })
+      .expect(502);
+  });
+
+  /* potencia */
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'potencia', a: 2, b: 3 })
+      .expect(200)
+      .then((response) => {
+        expect(response.body.resultado).toBe(8);
+      });
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'potencia', a: "a", b: 100 })
+      .expect(502);
+  });
+
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'potencia', a: undefined, b: 100 })
+      .expect(502);
+  });
+
+  /* factorial */
+  it('/operaciones (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/operaciones')
+      .query({ operacion: 'factorial', a: 6 })
+      .expect(200)
+      .then((response) => {
+        expect(response.body.resultado).toBe(720);
+      });
+  });
+
 });
