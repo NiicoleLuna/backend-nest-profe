@@ -48,10 +48,10 @@ describe('OperacionesService', () => {
     expect(() => {
       service.operar('suma', a, b);
     }).toThrow('No se puede llamar con números indefinidos.');
-    });
+  });
 
-    /* validaciones restar */
-    it('operación debería restar', () => {
+  /* validaciones restar */
+  it('operación debería restar', () => {
     let a: any = 20;
     let b = 10;
     expect(service.operar('resta', a, b)).toEqual(10);
@@ -75,10 +75,10 @@ describe('OperacionesService', () => {
     a = 'a';
     b = 50;
     expect(service.operar('resta', a, b)).toBeNaN();
-    });
+  });
 
-    /* validaciones multiplicar */
-    it('operación debería multiplicar', () => {
+  /* validaciones multiplicar */
+  it('operación debería multiplicar', () => {
     let a: any = 2;
     let b = 5;
     expect(service.operar('multiplicacion', a, b)).toEqual(10);
@@ -102,10 +102,10 @@ describe('OperacionesService', () => {
     a = 'a';
     b = 56;
     expect(service.operar('multiplicacion', a, b)).toBeNaN();
-    });
+  });
 
-    /* validaciones dividir */
-    it('operación debería dividir', () => {
+  /* validaciones dividir */
+  it('operación debería dividir', () => {
     let a: any = 100;
     let b = 10;
     expect(service.operar('division', a, b)).toEqual(10);
@@ -129,10 +129,10 @@ describe('OperacionesService', () => {
     a = 'a';
     b = 56;
     expect(service.operar('division', a, b)).toBeNaN();
-    });
+  });
 
-    /* validaciones potencia */
-    it('operación debería calcular potencia', () => {
+  /* validaciones potencia */
+  it('operación debería calcular potencia', () => {
     let a: any = 2;
     let b = 4;
     expect(service.operar('potencia', a, b)).toEqual(16);
@@ -156,10 +156,10 @@ describe('OperacionesService', () => {
     a = 'a';
     b = 87;
     expect(service.operar('potencia', a, b)).toBeNaN();
-    });
+  });
 
-    /* validaciones factorial */
-    it('operación debería calcular factorial', () => {
+  /* validaciones factorial */
+  it('operación debería calcular factorial', () => {
     let a: any = 5;
     expect(service.operar('factorial', a)).toEqual(120);
 
@@ -178,5 +178,5 @@ describe('OperacionesService', () => {
 
     a = 'a';
     expect(service.operar('factorial', a)).toBeNaN();
-    });
+  });
 });
