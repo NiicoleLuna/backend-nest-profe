@@ -22,7 +22,7 @@ pipeline{
             stages{
                 stage("Instalación de dependencias"){
                     steps{
-                        sh 'npm cli'
+                        sh 'npm ci'
                     }
                 }
             }
