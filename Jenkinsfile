@@ -46,10 +46,12 @@ pipeline{
         }
         stage ("build y push de imagen docker"){
             steps {
-                docker.withRegistry("${registry}", registryCredentials ){
-                    sh "docker build -t backend-nest-nlj ."
-                    sh "docker tag backend-nest-nlj ${dockerImagePrefix}/backend-nest-nlj"
-                    sh "docker push ${dockerImagePrefix}/backend-nest-nlj"
+                script {
+                    docker.withRegistry("${registry}", registryCredentials ){
+                        sh "docker build -t backend-nest-nlj ."
+                        sh "docker tag backend-nest-nlj ${dockerImagePrefix}/backend-nest-nlj"
+                        sh "docker push ${dockerImagePrefix}/backend-nest-nlj"
+                    }
                 }
             }
         }
